@@ -3,11 +3,12 @@ import MainPage from '../main-page/main-page';
 import Error from '../error/error';
 import Login from '../login/login';
 import MyList from '../my-list/my-list';
-import Films from '../films/films';
+// import Films from '../films/films';
 import AddReview from '../films/review/add-review';
 import Player from '../player/player';
-import SingIn from '../sing-in/sing-in';
+import SignIn from '../sign-in/sign-in';
 import PrivateRoute from '../private-route/private-route';
+import FilmPage from '../film-page/film-page';
 
 type PromoProops = {
   promoTitle: string;
@@ -35,10 +36,10 @@ function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
             </PrivateRoute>
           }
         />
-        <Route path='/films' element={<Films />}>
+        <Route path='/films' element={<FilmPage />}>
           <Route
             path='/films/:id'
-            element={<Films />}
+            element={<FilmPage />}
           />
         </Route>
         <Route
@@ -50,8 +51,8 @@ function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
           element={<Player />}
         />
         <Route
-          path='/sing-in'
-          element={<SingIn />}
+          path='/sign-in'
+          element={<SignIn />}
         />
         <Route
           path='*'
