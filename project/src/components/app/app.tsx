@@ -1,4 +1,14 @@
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import MainPage from '../main-page/main-page';
+import Error from '../error/error';
+import Login from '../login/login';
+import MyList from '../my-list/my-list';
+// import Films from '../films/films';
+import AddReview from '../films/review/add-review';
+import Player from '../player/player';
+import SignIn from '../sign-in/sign-in';
+import PrivateRoute from '../private-route/private-route';
+import FilmPage from '../film-page/film-page';
 
 type PromoProops = {
   promoTitle: string;
@@ -7,7 +17,50 @@ type PromoProops = {
 }
 
 function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
-  return <MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          index
+          element={<MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} />}
+        />
+        <Route
+          path='/login'
+          element={<Login />}
+        />
+        <Route
+          path='/my-list'
+          element={
+            <PrivateRoute>
+              <MyList />
+            </PrivateRoute>
+          }
+        />
+        <Route path='/films' element={<FilmPage />}>
+          <Route
+            path='/films/:id'
+            element={<FilmPage />}
+          />
+        </Route>
+        <Route
+          path='/films/:id/add-review'
+          element={<AddReview />}
+        />
+        <Route
+          path='/player/:id'
+          element={<Player />}
+        />
+        <Route
+          path='/sign-in'
+          element={<SignIn />}
+        />
+        <Route
+          path='*'
+          element={<Error />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
