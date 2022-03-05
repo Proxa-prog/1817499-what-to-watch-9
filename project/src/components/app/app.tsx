@@ -9,20 +9,23 @@ import Player from '../player/player';
 import SignIn from '../sign-in/sign-in';
 import PrivateRoute from '../private-route/private-route';
 import FilmPage from '../film-page/film-page';
+import {Films} from '../../types/film';
 
 type PromoProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
+  films: Films;
 }
 
-function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
+function App({promoTitle, promoGenre, promoYear, films}: PromoProops): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           index
-          element={<MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} />}
+          element={<MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} films={films}/>}
         />
         <Route
           path='/login'

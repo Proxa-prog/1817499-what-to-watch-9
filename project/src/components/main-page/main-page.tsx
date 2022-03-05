@@ -1,13 +1,18 @@
 import FilmCard from '../film-card/film-card';
 import { Link } from 'react-router-dom';
+import {Films} from '../../types/film';
 
 type MainPageProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
+  films: Films;
 }
 
-function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Element {
+function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): JSX.Element {
+
+  const [firstFilm] = films;
+
   return (
     <>
       <section className="film-card">
@@ -108,13 +113,8 @@ function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Ele
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
+            <FilmCard film={firstFilm} />
+            {/* <FilmCard />
             <FilmCard />
             <FilmCard />
 
@@ -132,6 +132,11 @@ function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Ele
             <FilmCard />
             <FilmCard />
             <FilmCard />
+
+            <FilmCard />
+            <FilmCard />
+            <FilmCard />
+            <FilmCard /> */}
           </div>
 
           <div className="catalog__more">
