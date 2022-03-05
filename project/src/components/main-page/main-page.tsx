@@ -1,6 +1,6 @@
-import FilmCard from '../film-card/film-card';
 import { Link } from 'react-router-dom';
 import {Films} from '../../types/film';
+import FilmsList from '../filmsList/filmsList';
 
 type MainPageProops = {
   promoTitle: string;
@@ -10,8 +10,6 @@ type MainPageProops = {
 }
 
 function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): JSX.Element {
-
-  const [firstFilm] = films;
 
   return (
     <>
@@ -113,30 +111,7 @@ function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): 
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard film={firstFilm} />
-            {/* <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard /> */}
+            <FilmsList films={films} />
           </div>
 
           <div className="catalog__more">

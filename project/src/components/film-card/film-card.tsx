@@ -1,7 +1,12 @@
 import {FilmType} from '../../types/film';
 
+type filmCardType = {
+  film: FilmType;
+}
 
-function FilmCard({film}: FilmType): JSX.Element {
+
+function FilmCard({film}: filmCardType): JSX.Element {
+
   return (
     <article className="small-film-card catalog__films-card">
       <div className="small-film-card__image">
