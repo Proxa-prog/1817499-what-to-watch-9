@@ -35,7 +35,7 @@ function App({promoTitle, promoGenre, promoYear, films}: PromoProops): JSX.Eleme
           path='/my-list'
           element={
             <PrivateRoute>
-              <MyList />
+              <MyList films={films} />
             </PrivateRoute>
           }
         />
@@ -47,11 +47,11 @@ function App({promoTitle, promoGenre, promoYear, films}: PromoProops): JSX.Eleme
         </Route>
         <Route
           path='/films/:id/add-review'
-          element={<AddReview />}
+          element={<AddReview films={films} />}
         />
         <Route
           path='/player/:id'
-          element={<Player />}
+          element={<Player films={films} />}
         />
         <Route
           path='/sign-in'
