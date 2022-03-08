@@ -9,13 +9,13 @@ import Player from '../player/player';
 import SignIn from '../sign-in/sign-in';
 import PrivateRoute from '../private-route/private-route';
 import FilmPage from '../film-page/film-page';
-import {Films} from '../../types/film';
+import {FilmsType} from '../../types/film';
 
 type PromoProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
-  films: Films;
+  films: FilmsType;
 }
 
 function App({promoTitle, promoGenre, promoYear, films}: PromoProops): JSX.Element {

@@ -1,6 +1,6 @@
-import {Films} from '../types/film';
+import {FilmsType} from '../types/film';
 
-export const FilmsArray: Films = [
+export const FilmsArray: FilmsType = [
   {
     src: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     alt: 'Fantastic Beasts: The Crimes of Grindelwald',

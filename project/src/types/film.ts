@@ -4,4 +4,4 @@ export type FilmType = {
   id: string;
 };
 
-export type Films = FilmType[];
+export type FilmsType = FilmType[];

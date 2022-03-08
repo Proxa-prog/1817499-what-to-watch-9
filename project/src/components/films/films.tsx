@@ -1,8 +1,15 @@
-function Films(): JSX.Element {
+import FilmCard from '../film-card/film-card';
+import {FilmsType} from '../../types/film';
+
+type FilmsListType = {
+  films: FilmsType;
+}
+
+function Films({films}: FilmsListType): JSX.Element {
   return (
-    <div>
-      {/* разметки для этой страницы нет, но она указана в ТЗ */}
-    </div>
+    <>
+      {films.map((item) => <FilmCard film={item} key={item.id} />)}
+    </>
   );
 }
 

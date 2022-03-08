@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import {Films} from '../../types/film';
-import FilmsList from '../filmsList/filmsList';
+import {FilmsType} from '../../types/film';
+import Films from '../films/films';
 
 type MainPageProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
-  films: Films;
+  films: FilmsType;
 }
 
 function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): JSX.Element {
@@ -111,7 +111,7 @@ function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): 
           </ul>
 
           <div className="catalog__films-list">
-            <FilmsList films={films} />
+            <Films films={films} />
           </div>
 
           <div className="catalog__more">
