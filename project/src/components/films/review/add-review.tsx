@@ -1,10 +1,14 @@
 import { FilmsType } from '../../../types/film';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 type addReviewType = {
   films: FilmsType;
 }
 
 function AddReview({ films }: addReviewType): JSX.Element {
+  const [sendComment, addComment] = useState([]);
+
   return (
     <>
       {films.map((item) => (
@@ -18,20 +22,20 @@ function AddReview({ films }: addReviewType): JSX.Element {
 
             <header className="page-header">
               <div className="logo">
-                <a href="main.html" className="logo__link">
+                <Link to="main.html" className="logo__link">
                   <span className="logo__letter logo__letter--1">W</span>
                   <span className="logo__letter logo__letter--2">T</span>
                   <span className="logo__letter logo__letter--3">W</span>
-                </a>
+                </Link>
               </div>
 
               <nav className="breadcrumbs">
                 <ul className="breadcrumbs__list">
                   <li className="breadcrumbs__item">
-                    <a href="film-page.html" className="breadcrumbs__link">{item.alt}</a>
+                    <Link to={`/films/${item.id}`} className="breadcrumbs__link">{item.alt}</Link>
                   </li>
                   <li className="breadcrumbs__item">
-                    <a className="breadcrumbs__link">Add review</a>
+                    <Link to='#' className="breadcrumbs__link">Add review</Link>
                   </li>
                 </ul>
               </nav>
@@ -43,7 +47,7 @@ function AddReview({ films }: addReviewType): JSX.Element {
                   </div>
                 </li>
                 <li className="user-block__item">
-                  <a className="user-block__link">Sign out</a>
+                  <Link to='#' className="user-block__link">Sign out</Link>
                 </li>
               </ul>
             </header>
@@ -92,7 +96,7 @@ function AddReview({ films }: addReviewType): JSX.Element {
               <div className="add-review__text">
                 <textarea className="add-review__textarea" name="review-text" id="review-text" placeholder="Review text"></textarea>
                 <div className="add-review__submit">
-                  <button className="add-review__btn" type="submit">Post</button>
+                  <button className="add-review__btn" type="submit" onClick={() => addComment(sendComment.push(value))}>Post</button>
                 </div>
 
               </div>
