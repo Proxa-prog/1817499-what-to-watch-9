@@ -7,13 +7,14 @@ type addReviewType = {
 }
 
 type commentType = {
-  rating: string;
+  rating: number;
   text: string;
+  value: number;
 }
 
 function AddReview({ films }: addReviewType): JSX.Element {
   const [comment, setComment] = useState({
-    rating: '1',
+    rating: 0,
     text: '',
   } as commentType);
 
@@ -73,10 +74,11 @@ function AddReview({ films }: addReviewType): JSX.Element {
                     [10,9,8,7,6,5,4,3,2,1].map((filmItem) => (
                       <>
                         <input className="rating__input" id={`star-${filmItem}`} type="radio" name="rating" value={`${filmItem}`}
+                          checked={comment.rating >= filmItem}
                           onChange={(evt: ChangeEvent<HTMLInputElement>) => {
                             setComment({
                               ...comment,
-                              rating: evt.target.value,
+                              rating: Number(evt.target.value),
                             });
                           }}
                         />
@@ -88,7 +90,7 @@ function AddReview({ films }: addReviewType): JSX.Element {
               </div>
 
               <div className="add-review__text">
-                <textarea className="add-review__textarea" name="review-text" id="review-text" placeholder="Review text" value={''}
+                <textarea className="add-review__textarea" name="review-text" id="review-text" placeholder="Review text" value={comment.text}
                   onChange={(evt: ChangeEvent<HTMLTextAreaElement>) => {
                     setComment({
                       ...comment,
