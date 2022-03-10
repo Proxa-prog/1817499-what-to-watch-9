@@ -27,7 +27,7 @@ function FilmPage () {
                 </div>
               </li>
               <li className="user-block__item">
-                <Link to='#' className="user-block__link">Sign out</Link>
+                <Link to='/sign-in' className="user-block__link">Sign out</Link>
               </li>
             </ul>
           </header>
