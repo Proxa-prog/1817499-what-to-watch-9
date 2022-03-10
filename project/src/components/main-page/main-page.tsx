@@ -22,7 +22,7 @@ function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): 
 
         <header className="page-header film-card__head">
           <div className="logo">
-            <Link to="#" className="logo__link">
+            <Link to='/' className="logo__link">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
@@ -36,7 +36,7 @@ function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): 
               </div>
             </li>
             <li className="user-block__item">
-              <Link to="#" className="user-block__link">Sign out</Link>
+              <Link to='/sign-in' className="user-block__link">Sign out</Link>
             </li>
           </ul>
         </header>

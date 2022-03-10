@@ -4,7 +4,7 @@ function Error() {
   return (
     <>
       <p>404 Not Found</p>
-      <Link to="/">На главную</Link>
+      <Link to='/'>На главную</Link>
     </>
   );
 }

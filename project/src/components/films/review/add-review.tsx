@@ -1,13 +1,13 @@
 import { FilmsType } from '../../../types/film';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 type addReviewType = {
   films: FilmsType;
 }
 
 function AddReview({ films }: addReviewType): JSX.Element {
-  const [sendComment, addComment] = useState([]);
+  // const [sendComment, addComment] = useState([]);
 
   return (
     <>
@@ -22,7 +22,7 @@ function AddReview({ films }: addReviewType): JSX.Element {
 
             <header className="page-header">
               <div className="logo">
-                <Link to="main.html" className="logo__link">
+                <Link to='/' className="logo__link">
                   <span className="logo__letter logo__letter--1">W</span>
                   <span className="logo__letter logo__letter--2">T</span>
                   <span className="logo__letter logo__letter--3">W</span>
@@ -61,8 +61,8 @@ function AddReview({ films }: addReviewType): JSX.Element {
             <form action="#" className="add-review__form" >
               <div className="rating">
                 <div className="rating__stars">
-                  <input className="rating__input" id="star-10" type="radio" name="rating" value="10"  onChange={(evt) => addComment(sendComment.concat(evt.target.value))}/>
-                  <label className="rating__label" htmlFor="star-10">Rating 10</label>
+                  {/* <input className="rating__input" id="star-10" type="radio" name="rating" value="10"  onChange={(evt) => addComment(sendComment.concat(evt.target.value))}/>
+                  <label className="rating__label" htmlFor="star-10">Rating 10</label> */}
 
                   <input className="rating__input" id="star-9" type="radio" name="rating" value="9" />
                   <label className="rating__label" htmlFor="star-9">Rating 9</label>
