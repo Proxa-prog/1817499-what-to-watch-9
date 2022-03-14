@@ -1,13 +1,16 @@
-import FilmCard from '../film-card/film-card';
 import { Link } from 'react-router-dom';
+import {FilmsType} from '../../types/film';
+import Films from '../films/films';
 
 type MainPageProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
+  films: FilmsType;
 }
 
-function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Element {
+function MainPage ({promoTitle, promoGenre, promoYear, films}: MainPageProops): JSX.Element {
+
   return (
     <>
       <section className="film-card">
@@ -19,7 +22,7 @@ function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Ele
 
         <header className="page-header film-card__head">
           <div className="logo">
-            <Link to="#" className="logo__link">
+            <Link to='/' className="logo__link">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
@@ -33,7 +36,7 @@ function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Ele
               </div>
             </li>
             <li className="user-block__item">
-              <Link to="#" className="user-block__link">Sign out</Link>
+              <Link to='/sign-in' className="user-block__link">Sign out</Link>
             </li>
           </ul>
         </header>
@@ -108,30 +111,7 @@ function MainPage ({promoTitle, promoGenre, promoYear}: MainPageProops): JSX.Ele
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
-            <FilmCard />
+            <Films films={films} />
           </div>
 
           <div className="catalog__more">

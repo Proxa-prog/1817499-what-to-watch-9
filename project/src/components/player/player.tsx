@@ -1,4 +1,11 @@
-function Player(): JSX.Element {
+import { FilmsType } from '../../types/film';
+
+type PlayerType = {
+  films: FilmsType;
+}
+
+
+function Player({ films }: PlayerType ): JSX.Element {
   return (
     <div className="player">
       <video src="#" className="player__video" poster="img/player-poster.jpg"></video>

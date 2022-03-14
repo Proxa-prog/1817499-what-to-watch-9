@@ -13,7 +13,7 @@ function FilmPage () {
 
           <header className="page-header film-card__head">
             <div className="logo">
-              <Link to="main.html" className="logo__link">
+              <Link to='/' className="logo__link">
                 <span className="logo__letter logo__letter--1">W</span>
                 <span className="logo__letter logo__letter--2">T</span>
                 <span className="logo__letter logo__letter--3">W</span>
@@ -27,7 +27,7 @@ function FilmPage () {
                 </div>
               </li>
               <li className="user-block__item">
-                <Link to="#" className="user-block__link">Sign out</Link>
+                <Link to='/sign-in' className="user-block__link">Sign out</Link>
               </li>
             </ul>
           </header>
@@ -53,7 +53,7 @@ function FilmPage () {
                   </svg>
                   <span>My list</span>
                 </button>
-                <Link to="add-review.html" className="btn film-card__button">Add review</Link>
+                <Link to='/films/:id/add-review' className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>

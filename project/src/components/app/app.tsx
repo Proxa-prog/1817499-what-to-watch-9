@@ -9,20 +9,23 @@ import Player from '../player/player';
 import SignIn from '../sign-in/sign-in';
 import PrivateRoute from '../private-route/private-route';
 import FilmPage from '../film-page/film-page';
+import {FilmsType} from '../../types/film';
 
 type PromoProops = {
   promoTitle: string;
   promoGenre: string;
   promoYear: number;
+  films: FilmsType;
 }
 
-function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
+function App({promoTitle, promoGenre, promoYear, films}: PromoProops): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           index
-          element={<MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} />}
+          element={<MainPage promoTitle={promoTitle} promoGenre={promoGenre} promoYear={promoYear} films={films}/>}
         />
         <Route
           path='/login'
@@ -32,7 +35,7 @@ function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
           path='/my-list'
           element={
             <PrivateRoute>
-              <MyList />
+              <MyList films={films} />
             </PrivateRoute>
           }
         />
@@ -44,11 +47,11 @@ function App({promoTitle, promoGenre, promoYear}: PromoProops): JSX.Element {
         </Route>
         <Route
           path='/films/:id/add-review'
-          element={<AddReview />}
+          element={<AddReview films={films} />}
         />
         <Route
           path='/player/:id'
-          element={<Player />}
+          element={<Player films={films} />}
         />
         <Route
           path='/sign-in'
