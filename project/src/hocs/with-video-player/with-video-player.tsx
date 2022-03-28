@@ -1,7 +1,7 @@
 // import { type } from "os";
-import { ComponentType, useState } from "react";
-import VideoPlayer from "../../components/video-player/video-player";
-import { FilmType } from "../../types/film";
+import { ComponentType } from 'react';
+import VideoPlayer from '../../components/video-player/video-player';
+import { FilmType } from '../../types/film';
 
 type HOCProps = {
   renderPlayer: (film: FilmType) => void
@@ -13,7 +13,7 @@ function withVideoPlayer<T>(Component: ComponentType<T>)
     type ComponentProps = Omit<T, keyof HOCProps>;
 
     function WithVideoPlayer(props: ComponentProps): JSX.Element {
-      const [activePlayerId, setActivePlayerId] = useState(0);
+      // const [activePlayerId, setActivePlayerId] = useState(0);
 
       return(
         <Component
@@ -29,6 +29,6 @@ function withVideoPlayer<T>(Component: ComponentType<T>)
       );
     }
     return WithVideoPlayer;
-  }
+}
 
-  export default withVideoPlayer;
+export default withVideoPlayer;
