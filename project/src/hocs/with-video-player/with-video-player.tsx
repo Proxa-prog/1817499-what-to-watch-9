@@ -1,4 +1,4 @@
-import { type } from "os";
+// import { type } from "os";
 import { ComponentType, useState } from "react";
 import VideoPlayer from "../../components/video-player/video-player";
 import { FilmType } from "../../types/film";

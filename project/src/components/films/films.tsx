@@ -1,10 +1,10 @@
 import FilmCard from '../film-card/film-card';
-import {FilmsType, FilmType} from '../../types/film';
+import {FilmsType} from '../../types/film';
 // import {useState} from 'react';
 
 type FilmsListType = {
   films: FilmsType;
-  renderPlayer: (film: FilmType) => JSX.Element;
+  // renderPlayer: (film: FilmType) => JSX.Element;
 }
 
 function Films({films}: FilmsListType): JSX.Element {
