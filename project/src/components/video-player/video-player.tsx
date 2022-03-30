@@ -44,7 +44,6 @@ function VideoPlayer ({film, isPreview, isActive}: VideoType):JSX.Element {
   return(
     <video width="280" height="175"
       src={film.src}
-      controls
       muted
       poster={isLoading ? 'Загрузка...': film.posterImage}
       ref={videoRef}

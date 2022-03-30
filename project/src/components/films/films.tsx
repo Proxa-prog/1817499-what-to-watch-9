@@ -4,7 +4,6 @@ import {FilmsType} from '../../types/film';
 
 type FilmsListType = {
   films: FilmsType;
-  // renderPlayer: (film: FilmType) => JSX.Element;
 }
 
 function Films({films}: FilmsListType): JSX.Element {

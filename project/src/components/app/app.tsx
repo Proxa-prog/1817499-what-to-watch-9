@@ -3,7 +3,6 @@ import MainPage from '../main-page/main-page';
 import Error from '../error/error';
 import Login from '../login/login';
 import MyList from '../my-list/my-list';
-// import Films from '../films/films';
 import AddReview from '../films/review/add-review';
 import Player from '../player/player';
 import SignIn from '../sign-in/sign-in';
